@@ -2,6 +2,9 @@
 {
     public async Task<List<SomeInfo1>> SomeData(Guid deviceId)
     {
-        return new List<SomeInfo1>();
+        var data = new List<SomeInfo1>();
+        data.Add(new SomeInfo1() { Count = 10, Name = "Brilliant Device Name" });
+
+        return data;
     }
 }

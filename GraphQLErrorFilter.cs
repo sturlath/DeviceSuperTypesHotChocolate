@@ -6,6 +6,13 @@ public class GraphQLErrorFilter : IErrorFilter
     {
         Log.Error(error.Exception, "Exception occurred");
 
-        return error.WithMessage(error!.Exception!.Message);
+        if (error.Exception != null)
+        {
+            return error.WithMessage(error.Exception.Message);
+        }
+        else
+        {
+            return error.WithMessage(error.Message);
+        }
     }
 }

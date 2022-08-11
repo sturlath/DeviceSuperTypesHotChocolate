@@ -2,6 +2,9 @@
 {
     public async Task<List<SomeInfo2>> SomethingOtherThanSomeData(Guid deviceId)
     {
-        return new List<SomeInfo2>();
+        var data = new List<SomeInfo2>();
+        data.Add(new SomeInfo2() { Age = 20, Name = "Another Brilliant Device Name" });
+
+        return data;
     }
 }
