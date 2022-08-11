@@ -3,5 +3,15 @@
 [ExtendObjectType("Query")]
 public class DeviceTwoRoot
 {
-    public DeviceTwo? DeviceTwo { get; set; }
+    private readonly IDeviceTwoRepository deviceTwoRepository;
+
+    public DeviceTwoRoot(IDeviceTwoRepository deviceTwoRepository)
+    {
+        this.deviceTwoRepository = deviceTwoRepository;
+    }
+
+    public DeviceTwo DeviceTwo()
+    {
+        return new DeviceTwo(deviceTwoRepository);
+    }
 }
